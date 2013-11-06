@@ -1,22 +1,8 @@
 package algobinaertree;
 
-//BinaryNode class; stores a node in a tree.
-//
-//CONSTRUCTION: with (a) no parameters, or (b) an Object,
-//  or (c) an Object, left child, and right child.
-//
-//*******************PUBLIC OPERATIONS**********************
-//int size( )            --> Return size of subtree at node
-//int height( )          --> Return height of subtree at node
-//void printPostOrder( ) --> Print a postorder tree traversal
-//void printInOrder( )   --> Print an inorder tree traversal
-//void printPreOrder( )  --> Print a preorder tree traversal
-//BinaryNode duplicate( )--> Return a duplicate tree
 
-/**
- * Binary node class with recursive routines to compute size and height.
- */
-final class BinaryNode<AnyType> {
+
+public class BinaryNode<AnyType> {
 	public BinaryNode() {
 		this(null, null, null);
 	}
@@ -47,8 +33,7 @@ final class BinaryNode<AnyType> {
 		else
 			return 1 + Math.max(height(t.left), height(t.right));
 	}
-
-	// Print tree rooted at current node using preorder traversal.
+ 
 	public void printPreOrder() {
 		System.out.println(element); // Node
 		if (left != null)
@@ -57,7 +42,7 @@ final class BinaryNode<AnyType> {
 			right.printPreOrder(); // Right
 	}
 
-	// Print tree rooted at current node using postorder traversal.
+
 	public void printPostOrder() {
 		if (left != null)
 			left.printPostOrder(); // Left
@@ -66,7 +51,8 @@ final class BinaryNode<AnyType> {
 		System.out.println(element); // Node
 	}
 
-	// Print tree rooted at current node using inorder traversal.
+	
+
 	public void printInOrder() {
 
 		if (left != null) {
@@ -87,11 +73,11 @@ final class BinaryNode<AnyType> {
 	public BinaryNode<AnyType> duplicate() {
 		BinaryNode<AnyType> root = new BinaryNode<AnyType>(element, null, null);
 
-		if (left != null) // If there's a left subtree
-			root.left = left.duplicate(); // Duplicate; attach
-		if (right != null) // If there's a right subtree
-			root.right = right.duplicate(); // Duplicate; attach
-		return root; // Return resulting tree
+		if (left != null) 
+			root.left = left.duplicate();
+		if (right != null) 
+			root.right = right.duplicate(); 
+		return root; 
 	}
 
 	public AnyType getElement() {
