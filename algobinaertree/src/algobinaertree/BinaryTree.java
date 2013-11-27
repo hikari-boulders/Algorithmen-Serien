@@ -80,6 +80,13 @@ public class BinaryTree<AnyType>
         return root;
     }
     
+    public void Ausbalancieren()
+    {
+    	
+    }
+    
+   
+    
     private BinaryNode<AnyType> root;
 
     static public void main( String [ ] args )
